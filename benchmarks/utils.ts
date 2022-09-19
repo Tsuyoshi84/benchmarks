@@ -9,7 +9,7 @@ interface BenchmarkInfo {
   fn: AnyFunction
 }
 
-export function setupBenchmark(funcs: Array<BenchmarkInfo>): Suite {
+export function setupBenchmark(benchmarks: Array<BenchmarkInfo>): Suite {
   var suite = new Suite({
     onStart: function () {
       console.log(`\nStart benchmark on ${platform.description}\n`)
@@ -24,8 +24,8 @@ export function setupBenchmark(funcs: Array<BenchmarkInfo>): Suite {
     async: true,
   })
 
-  funcs.forEach((func) => {
-    suite.add(func.name, func.fn)
+  benchmarks.forEach(({ name, fn }) => {
+    suite.add(name, fn)
   })
 
   return suite
