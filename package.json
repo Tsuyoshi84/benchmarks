@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "benchmark": "^2.1.4"
+    "benchmark": "^2.1.4",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.5"
   },
   "devDependencies": {
     "@types/benchmark": "^2.1.2",
