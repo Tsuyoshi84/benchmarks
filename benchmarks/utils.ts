@@ -20,6 +20,7 @@ export function setupBenchmark(benchmarks: Array<BenchmarkInfo>): Suite {
     },
     onComplete: function () {
       console.log('\nFastest is ' + this.filter('fastest').map('name'))
+      console.log('Slowest is ' + this.filter('slowest').map('name'))
     },
     async: true,
   })

@@ -21,17 +21,12 @@ function useObjectLiteral() {
   return { name, age }
 }
 
-function useObjectCreate() {
-  return Object.create({ name, age })
-}
-
 function useJsonParse() {
   return JSON.parse(`{"name":"${name}","age":${age}}`)
 }
 
 setupBenchmark([
-  { name: 'Class          ', fn: useClass },
-  { name: 'Object literal ', fn: useObjectLiteral },
-  { name: 'Object.create()', fn: useObjectCreate },
-  { name: 'JSON.parse()   ', fn: useJsonParse },
+  { name: 'Class', fn: useClass },
+  { name: 'Object literal', fn: useObjectLiteral },
+  { name: 'JSON.parse()', fn: useJsonParse },
 ]).run()
