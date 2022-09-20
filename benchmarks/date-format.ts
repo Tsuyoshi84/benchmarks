@@ -1,6 +1,7 @@
 import { setupBenchmark } from './utils'
 import { format } from 'date-fns'
 import dayjs from 'dayjs'
+import { DateTime } from 'luxon'
 
 const date = new Date('2014-06-25T02:03:04.000Z')
 
@@ -10,6 +11,10 @@ function useDateFns() {
 
 function useDayjs() {
   return dayjs(date).format('YYYY/MM/DD HH:mm:ss')
+}
+
+function useLuxon() {
+  return DateTime.fromJSDate(date).toFormat('yyyy/MM/dd HH:mm:ss')
 }
 
 const formatter = new Intl.DateTimeFormat('ja-JP', {
@@ -40,12 +45,14 @@ function useStringInterpolation() {
 
 // console.log(useDateFns())
 // console.log(useDayjs())
+// console.log(useLuxon())
 // console.log(useIntlDateTimeFormat())
 // console.log(useStringInterpolation())
 
 setupBenchmark([
   { name: 'date-fns', fn: useDateFns },
   { name: 'dayjs', fn: useDayjs },
+  { name: 'luxon', fn: useLuxon },
   { name: 'Intl.DateTimeFormat', fn: useIntlDateTimeFormat },
   { name: 'String interpolation', fn: useStringInterpolation },
 ]).run()
