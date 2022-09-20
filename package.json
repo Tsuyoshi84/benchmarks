@@ -12,10 +12,12 @@
   "dependencies": {
     "benchmark": "^2.1.4",
     "date-fns": "^2.29.3",
-    "dayjs": "^1.11.5"
+    "dayjs": "^1.11.5",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/benchmark": "^2.1.2",
+    "@types/lodash-es": "^4.17.6",
     "tsx": "^3.9.0"
   }
 }

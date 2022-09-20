@@ -2,18 +2,22 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/benchmark': ^2.1.2
+  '@types/lodash-es': ^4.17.6
   benchmark: ^2.1.4
   date-fns: ^2.29.3
   dayjs: ^1.11.5
+  lodash-es: ^4.17.21
   tsx: ^3.9.0
 
 dependencies:
   benchmark: 2.1.4
   date-fns: 2.29.3
   dayjs: 1.11.5
+  lodash-es: 4.17.21
 
 devDependencies:
   '@types/benchmark': 2.1.2
+  '@types/lodash-es': 4.17.6
   tsx: 3.9.0
 
 packages:
@@ -50,6 +54,16 @@ packages:
 
   /@types/benchmark/2.1.2:
     resolution: {integrity: sha512-EDKtLYNMKrig22jEvhXq8TBFyFgVNSPmDF2b9UzJ7+eylPqdZVo17PCUMkn1jP6/1A/0u78VqYC6VrX6b8pDWA==}
+    dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.185
+    dev: true
+
+  /@types/lodash/4.14.185:
+    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
     dev: true
 
   /benchmark/2.1.4:
@@ -292,6 +306,10 @@ packages:
   /get-tsconfig/4.2.0:
     resolution: {integrity: sha512-X8u8fREiYOE6S8hLbq99PeykTDoLVnxvF4DjWKJmz9xy2nNRdUcV8ZN9tniJFeKyTU3qnC9lL8n4Chd6LmVKHg==}
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
