@@ -88,3 +88,26 @@ export function compareDesc(dateLeft: Date, dateRight: Date): number {
     return diff
   }
 }
+
+const timezoneDiffMap = new Map<string, number>()
+const baseDate = (() => {
+  const now = new Date()
+  now.setMilliseconds(0)
+  return now
+})()
+
+function timezoneDiff(timeZone: string): number {
+  if (timezoneDiffMap.has(timeZone)) {
+    return timezoneDiffMap.get(timeZone)!
+  }
+
+  const timezoneDate = new Date(baseDate.toLocaleString('sv-SE', { timeZone }))
+  const diff = differenceInMilliseconds(timezoneDate, baseDate)
+  timezoneDiffMap.set(timeZone, diff)
+
+  return diff
+}
+
+export function utcToZonedTime(isoDate: string, timeZone: string): Date {
+  return new Date(new Date(isoDate).getTime() + timezoneDiff(timeZone))
+}
