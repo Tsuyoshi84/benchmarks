@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const num = '1234567890'
 
@@ -18,9 +18,9 @@ function usePlus() {
   return num + 0
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'parseInt()', fn: useParseInt },
   { name: 'Number() constructor', fn: useNumberConstructor },
   { name: 'Unary plus operator', fn: useUnaryPlus },
   { name: 'Plus operator', fn: usePlus },
-]).run()
+])

@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 import { addDays } from 'date-fns'
 import { addDays as myAddDays } from '../libs/date'
 
@@ -13,7 +13,7 @@ function useMyAddDays() {
   myAddDays(date, days)
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'date-fns', fn: useDateFns },
   { name: 'myAddDays', fn: useMyAddDays },
-]).run()
+])

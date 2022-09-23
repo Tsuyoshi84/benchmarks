@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const obj = {
   id: 1,
@@ -19,8 +19,8 @@ function useJSONParseStringify() {
   return JSON.parse(JSON.stringify(obj))
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'Spread operator', fn: useSpread },
   { name: 'Object.assign()', fn: useObjectAssign },
   { name: 'JSON.parse(JSON.stringify())', fn: useJSONParseStringify },
-]).run()
+])

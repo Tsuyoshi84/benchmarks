@@ -2,7 +2,7 @@
  * @see https://web.dev/structured-clone/
  */
 
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 import { cloneDeep } from 'lodash-es'
 
 const obj = {
@@ -40,8 +40,8 @@ function useStructuredClone() {
   return structuredClone(obj)
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'JSON.parse(JSON.stringify())', fn: useJSONParseStringify },
   { name: 'Lodash.cloneDeep()', fn: useLodashCloneDeep },
   { name: 'structuredClone()', fn: useStructuredClone },
-]).run()
+])

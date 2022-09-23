@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const array = new Array(10000).fill(1)
 
@@ -30,9 +30,9 @@ function useReduce() {
   return array.reduce((sum, item) => sum + item, 0)
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'for loop', fn: useForLoop },
   { name: 'for-of loop', fn: useForOfLoop },
   { name: 'forEach()', fn: useForEach },
   { name: 'reduce()', fn: useReduce },
-]).run()
+])

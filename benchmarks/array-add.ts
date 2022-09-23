@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const size = 100
 
@@ -38,9 +38,9 @@ function useSpread() {
   return arr
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'Array.prototype.push()', fn: usePush },
   { name: 'Array[index] = value', fn: useIndex },
   { name: 'Array.prototype.concat()', fn: useConcat },
   { name: 'Spread operator', fn: useSpread },
-]).run()
+])

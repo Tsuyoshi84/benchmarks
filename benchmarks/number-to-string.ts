@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const num = 1234567890
 
@@ -14,8 +14,8 @@ function useStringInterpolation() {
   return `${num}`
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'Number.prototype.toString()', fn: useToString },
   { name: 'String() constructor', fn: useStringConstructor },
   { name: 'String interpolation', fn: useStringInterpolation },
-]).run()
+])

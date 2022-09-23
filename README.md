@@ -9,5 +9,11 @@ This repository checks the benchmark of JavaScript code by using [benchmark.js](
 Run the following command:
 
 ```sh
-npx tsc [path-to-file].tsc
+pnpm bench [benchmark-name]
+```
+
+Example:
+
+```
+pnpm bench array-add
 ```

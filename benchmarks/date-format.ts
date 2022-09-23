@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 import { format } from 'date-fns'
 import dayjs from 'dayjs'
 import { DateTime } from 'luxon'
@@ -49,10 +49,10 @@ function useStringInterpolation() {
 // console.log(useIntlDateTimeFormat())
 // console.log(useStringInterpolation())
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'date-fns', fn: useDateFns },
   { name: 'dayjs', fn: useDayjs },
   { name: 'luxon', fn: useLuxon },
   { name: 'Intl.DateTimeFormat', fn: useIntlDateTimeFormat },
   { name: 'String interpolation', fn: useStringInterpolation },
-]).run()
+])

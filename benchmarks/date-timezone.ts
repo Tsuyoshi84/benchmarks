@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 import { utcToZonedTime } from 'date-fns-tz'
 import { utcToZonedTime as myUtcToZonedTime } from '../libs/date'
 
@@ -16,7 +16,7 @@ function useMyUtcToZonedTime() {
 // console.log(useDateFnsTz().toString())
 // console.log(useMyUtcToZonedTime().toString())
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'date-fns-tz', fn: useDateFnsTz },
   { name: 'myUtcToZonedTime', fn: useMyUtcToZonedTime },
-]).run()
+])

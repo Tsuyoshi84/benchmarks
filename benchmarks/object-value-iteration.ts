@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const targetObj = {
   a: 1,
@@ -36,8 +36,8 @@ function useFromEntries() {
   return Object.fromEntries(arr)
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'reduce + spread operator', fn: useReduce },
   { name: 'reduce + Object.assign', fn: useObjectAssign },
   { name: 'fromEntries', fn: useFromEntries },
-]).run()
+])

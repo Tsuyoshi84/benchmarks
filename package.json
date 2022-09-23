@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bench": "tsx ./src/run.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,8 @@
   "devDependencies": {
     "@types/benchmark": "^2.1.2",
     "@types/lodash-es": "^4.17.6",
+    "@types/luxon": "^3.0.1",
+    "@types/node": "^18.7.18",
     "tsx": "^3.9.0"
   }
 }

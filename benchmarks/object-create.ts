@@ -1,4 +1,4 @@
-import { setupBenchmark } from './utils'
+import { setupBenchmark } from '../src/utils'
 
 const name = 'John'
 const age = 20
@@ -25,8 +25,8 @@ function useJsonParse() {
   return JSON.parse(`{"name":"${name}","age":${age}}`)
 }
 
-setupBenchmark([
+export const suite = setupBenchmark([
   { name: 'Class', fn: useClass },
   { name: 'Object literal', fn: useObjectLiteral },
   { name: 'JSON.parse()', fn: useJsonParse },
-]).run()
+])
