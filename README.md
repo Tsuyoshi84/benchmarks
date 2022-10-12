@@ -2,7 +2,7 @@
 
 This repository checks the benchmark of JavaScript code by using [benchmark.js](https://github.com/bestiejs/benchmark.js/).
 
-# Usage
+## Usage
 
 ## Run on Node.js
 
@@ -14,6 +14,6 @@ pnpm bench [benchmark-name]
 
 Example:
 
-```
+```sh
 pnpm bench array-add
 ```
